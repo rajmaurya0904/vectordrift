@@ -36,8 +36,9 @@ pip install -e ".[dev]"
 
 ## Limitations
 
-- Operates purely locally on static datasets; does not integrate with remote vector databases or telemetry streaming services.
-- Requires pre-computed or locally generated embedding arrays stored in supported local formats.
+- **Local compute constraints**: Runs entirely in-memory and on local CPU/GPU hardware; large test datasets with millions of high-dimensional vectors may exceed RAM or cause performance bottlenecks.
+- **Supported embedding dimensions**: Designed for standard dense floating-point vector dimensions (e.g., 384 to 3072 dimensions); extremely sparse representations or non-standard vector structures are not natively supported.
+- **Snapshot storage scope**: Stores embedding snapshots and test datasets as unencrypted local files without built-in version control system integration or remote synchronization.
 
 ## Development
 
@@ -49,4 +50,4 @@ ruff check .
 
 ## License
 
-MIT -- see [LICENSE](LICENSE).
+MIT -- see [LICENSE](LICENSE)
